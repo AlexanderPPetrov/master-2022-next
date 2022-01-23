@@ -19,7 +19,27 @@ export function currentWeather(state = {}, action) {
     }
 }
 
+export function movies(state = [], action) {
+    switch(action.type) {
+        case actionTypes.SET_MOVIES:
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+export function selectedMovie(state = {}, action) {
+    switch(action.type) {
+        case actionTypes.SET_SELECTED_MOVIE:
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 export default combineReducers({
     dailyWeather,
     currentWeather,
+    movies,
+    selectedMovie,
 })

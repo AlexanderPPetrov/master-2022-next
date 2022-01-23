@@ -28,6 +28,11 @@ function NavBar() {
                             {t('forecast')}
                         </a>
                     </ActiveLink>
+                    <ActiveLink activeClassName="active" href="/movies">
+                        <a className="nav-link">
+                            {t('movies')}
+                        </a>
+                    </ActiveLink>
                 </Nav>
                 <LanguageSwitch/>
                 </Navbar.Collapse>

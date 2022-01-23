@@ -17,12 +17,10 @@ function DefaultLayout(props) {
           <NavBar/>
           <Container className="mt-5">
               <Row>
-                <Col xs={12} md={8}>
+                <Col xs={12} md={props.right ? 8 : 12}>
                   {props.left}
                 </Col>
-                <Col xs={6} md={4}>
-                  {props.right}
-                </Col>
+                {props.right ? <Col xs={6} md={4}> {props.right} </Col> : null}
               </Row>
           </Container>
         </>
