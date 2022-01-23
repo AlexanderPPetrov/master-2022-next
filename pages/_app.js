@@ -1,7 +1,10 @@
 import { Provider } from 'react-redux'
 import { useStore } from '../redux/store'
+import { appWithTranslation } from 'next-i18next';
+
 import '../styles/styles.scss';
-export default function App({ Component, pageProps }) {
+
+function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState)
 
   return (
@@ -10,3 +13,4 @@ export default function App({ Component, pageProps }) {
     </Provider>
   )
 }
+export default appWithTranslation(App)

@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import { useDispatch } from 'react-redux';
 import { getWeather } from "../redux/actions";
 import Weather from "../components/Weather";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 function Forecast(props) {
 
@@ -17,4 +18,9 @@ function Forecast(props) {
     );
   }
 
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...await serverSideTranslations(locale, ['common', 'navbar']),
+  },
+})
 export default Forecast;
