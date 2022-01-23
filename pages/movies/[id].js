@@ -19,7 +19,7 @@ function MovieDetails() {
 
 
     function renderMovie() {
-        if(!Object.keys(movie).length) {
+        if(!movie || !Object.keys(movie).length) {
             return null;
         }
         return <Movie movie={movie}/>
